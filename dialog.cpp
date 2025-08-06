@@ -49,14 +49,12 @@ void Dialog::on_buttonBox_clicked(QAbstractButton *button) {
     QDialogButtonBox::StandardButton stdBtn = ui->buttonBox->standardButton(button);
 
     if(stdBtn == QDialogButtonBox::Open){
-        qDebug() << "You pressed Open.";
         load();
         return;
 
     }
 
     if(stdBtn == QDialogButtonBox::Save){
-        qDebug() << "You pressed Save.";
         save();
         return;
     }
@@ -93,6 +91,8 @@ void Dialog::save() {
 
     file.close();
     m_saved = true;
+
+    QMessageBox::information(this, "Saved!", "the file has been saved successfully!");
 }
 
 void Dialog::closeEvent(QCloseEvent *event) {
