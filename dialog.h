@@ -2,12 +2,10 @@
 #define DIALOG_H
 
 #include <QDialog>
-#include <QPushButton>
-#include <QPlainTextEdit>
 #include <QMessageBox>
 #include <QFile>
-#include <QTextStream>
-#include <QDebug>
+#include <QDataStream>
+#include <QString>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,21 +23,15 @@ public:
 
 private slots:
 
-    void on_plainTextEdit_textChanged();
+    void on_buttonBox_accepted();
 
-    void on_buttonBox_clicked(QAbstractButton *button);
-
-    void load();
-    void save();
+    void on_buttonBox_rejected();
 
 private:
     Ui::Dialog *ui;
 
-    bool m_saved;
-
-    // QWidget interface
-protected:
-    void closeEvent(QCloseEvent *event);
+    void load();
+    void save();
 };
 
 #endif // DIALOG_H

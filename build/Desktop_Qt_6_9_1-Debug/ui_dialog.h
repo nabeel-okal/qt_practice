@@ -14,7 +14,12 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QDoubleSpinBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -23,14 +28,21 @@ class Ui_Dialog
 {
 public:
     QVBoxLayout *verticalLayout;
-    QPlainTextEdit *plainTextEdit;
+    QGridLayout *gridLayout;
+    QLabel *label;
+    QLabel *label_2;
+    QLineEdit *txtName;
+    QDoubleSpinBox *sbxQty;
+    QSpinBox *sbxAge;
+    QLabel *label_3;
+    QSpacerItem *verticalSpacer;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName("Dialog");
-        Dialog->resize(633, 346);
+        Dialog->resize(292, 168);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -118,14 +130,48 @@ public:
         Dialog->setStyleSheet(QString::fromUtf8(""));
         verticalLayout = new QVBoxLayout(Dialog);
         verticalLayout->setObjectName("verticalLayout");
-        plainTextEdit = new QPlainTextEdit(Dialog);
-        plainTextEdit->setObjectName("plainTextEdit");
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName("gridLayout");
+        label = new QLabel(Dialog);
+        label->setObjectName("label");
 
-        verticalLayout->addWidget(plainTextEdit);
+        gridLayout->addWidget(label, 1, 0, 1, 1);
+
+        label_2 = new QLabel(Dialog);
+        label_2->setObjectName("label_2");
+
+        gridLayout->addWidget(label_2, 2, 0, 1, 1);
+
+        txtName = new QLineEdit(Dialog);
+        txtName->setObjectName("txtName");
+
+        gridLayout->addWidget(txtName, 0, 1, 1, 1);
+
+        sbxQty = new QDoubleSpinBox(Dialog);
+        sbxQty->setObjectName("sbxQty");
+
+        gridLayout->addWidget(sbxQty, 2, 1, 1, 1);
+
+        sbxAge = new QSpinBox(Dialog);
+        sbxAge->setObjectName("sbxAge");
+
+        gridLayout->addWidget(sbxAge, 1, 1, 1, 1);
+
+        label_3 = new QLabel(Dialog);
+        label_3->setObjectName("label_3");
+
+        gridLayout->addWidget(label_3, 0, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 3, 1, 1, 1);
+
+
+        verticalLayout->addLayout(gridLayout);
 
         buttonBox = new QDialogButtonBox(Dialog);
         buttonBox->setObjectName("buttonBox");
-        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Open|QDialogButtonBox::StandardButton::Save);
+        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
 
         verticalLayout->addWidget(buttonBox);
 
@@ -137,7 +183,10 @@ public:
 
     void retranslateUi(QDialog *Dialog)
     {
-        Dialog->setWindowTitle(QCoreApplication::translate("Dialog", "Assignment 3", nullptr));
+        Dialog->setWindowTitle(QCoreApplication::translate("Dialog", "Example", nullptr));
+        label->setText(QCoreApplication::translate("Dialog", "Age", nullptr));
+        label_2->setText(QCoreApplication::translate("Dialog", "Quantity", nullptr));
+        label_3->setText(QCoreApplication::translate("Dialog", "Name", nullptr));
     } // retranslateUi
 
 };
