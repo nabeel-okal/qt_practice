@@ -7,16 +7,28 @@ Dialog::Dialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    load();
+    ui->dateTimeEdit->setDateTime(QDateTime::currentDateTime());
 }
 
 Dialog::~Dialog()
 {
     delete ui;
 }
+void Dialog::on_timeEdit_userTimeChanged(const QTime &time) {
+    ui->timeEdit->setTime(time);
+    ui->dateTimeEdit->setTime(time);
+}
+
+
+void Dialog::on_dateEdit_userDateChanged(const QDate &date) {
+    ui->dateEdit->setDate(date);
+    ui->dateTimeEdit->setDate(date);
+}
+
 
 void Dialog::on_buttonBox_accepted() {
-    save();
+    QMessageBox::information(this, "Result", "You selected: " + QLocale().toString(ui->dateTimeEdit->dateTime(), QLocale::ShortFormat));
+
     accept();
 }
 
@@ -25,51 +37,3 @@ void Dialog::on_buttonBox_rejected() {
     reject();
 }
 
-void Dialog::load() {
-    ui->txtName->setText("");
-    ui->sbxAge->setValue(0);
-    ui->sbxQty->setValue(0);
-
-    QFile file("example_file.dat");
-
-    if(!file.open(QIODevice::ReadOnly)){
-        QMessageBox::critical(this, "ERROR!", file.errorString());
-        return;
-    }
-
-    QDataStream ds(&file);
-
-    QString name;
-    int age;
-    double qty;
-
-
-    ds << name;
-    ds << age;
-    ds << qty;
-
-    // Setting the values into the widgets
-
-    ui->txtName->setText(name);
-    ui->sbxAge->setValue(age);
-    ui->sbxQty->setValue(qty);
-    file.close();
-}
-
-void Dialog::save() {
-    QFile file("example_file.dat");
-
-    if(!file.open(QIODevice::WriteOnly)){
-        QMessageBox::critical(this, "ERROR!", file.errorString());
-        return;
-    }
-
-    QDataStream ds(&file);
-
-    ds << ui->txtName->text();
-    ds << ui->sbxAge->value();
-    ds << ui->sbxQty->value();
-
-    file.close();
-    QMessageBox::information(this, "Saved!", "the file has been saved successfully!");
-}

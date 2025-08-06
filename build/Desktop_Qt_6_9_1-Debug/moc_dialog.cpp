@@ -39,16 +39,28 @@ template <> constexpr inline auto Dialog::qt_create_metaobjectdata<qt_meta_tag_Z
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "Dialog",
-        "on_buttonBox_accepted",
+        "on_timeEdit_userTimeChanged",
         "",
+        "time",
+        "on_dateEdit_userDateChanged",
+        "date",
+        "on_buttonBox_accepted",
         "on_buttonBox_rejected"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Slot 'on_timeEdit_userTimeChanged'
+        QtMocHelpers::SlotData<void(const QTime &)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QTime, 3 },
+        }}),
+        // Slot 'on_dateEdit_userDateChanged'
+        QtMocHelpers::SlotData<void(const QDate &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QDate, 5 },
+        }}),
         // Slot 'on_buttonBox_accepted'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_buttonBox_rejected'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -72,12 +84,13 @@ void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     auto *_t = static_cast<Dialog *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_buttonBox_accepted(); break;
-        case 1: _t->on_buttonBox_rejected(); break;
+        case 0: _t->on_timeEdit_userTimeChanged((*reinterpret_cast< std::add_pointer_t<QTime>>(_a[1]))); break;
+        case 1: _t->on_dateEdit_userDateChanged((*reinterpret_cast< std::add_pointer_t<QDate>>(_a[1]))); break;
+        case 2: _t->on_buttonBox_accepted(); break;
+        case 3: _t->on_buttonBox_rejected(); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *Dialog::metaObject() const
@@ -99,14 +112,14 @@ int Dialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }
