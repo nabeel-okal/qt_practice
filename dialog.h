@@ -2,9 +2,10 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QIcon>
+#include <QFile>
+#include <QTextStream>
 #include <QMessageBox>
-#include <QDateTime>
-#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,14 +22,7 @@ public:
     ~Dialog();
 
 private slots:
-
-    void on_timeEdit_userTimeChanged(const QTime &time);
-
-    void on_dateEdit_userDateChanged(const QDate &date);
-
     void on_buttonBox_accepted();
-
-    void on_buttonBox_rejected();
 
 private:
     Ui::Dialog *ui;

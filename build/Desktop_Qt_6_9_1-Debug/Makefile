@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../main.cpp \
-		../../dialog.cpp moc_dialog.cpp
+		../../dialog.cpp qrc_resources.cpp \
+		moc_dialog.cpp
 OBJECTS       = main.o \
 		dialog.o \
+		qrc_resources.o \
 		moc_dialog.o
 DIST          = /Qt/6.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/Qt/6.9.1/gcc_64/mkspecs/common/unix.conf \
@@ -272,6 +274,7 @@ DIST          = /Qt/6.9.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/Qt/6.9.1/gcc_64/mkspecs/features/qt_config.prf \
 		/Qt/6.9.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/Qt/6.9.1/gcc_64/mkspecs/features/spec_post.prf \
+		../../.qmake.stash \
 		/Qt/6.9.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/Qt/6.9.1/gcc_64/mkspecs/features/toolchain.prf \
 		/Qt/6.9.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -521,6 +524,7 @@ Makefile: ../../GUI_prototype.pro ../../../../Qt/6.9.1/gcc_64/mkspecs/features/s
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.9.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -543,6 +547,7 @@ Makefile: ../../GUI_prototype.pro ../../../../Qt/6.9.1/gcc_64/mkspecs/features/s
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/yacc.prf \
 		../../../../Qt/6.9.1/gcc_64/mkspecs/features/lex.prf \
 		../../GUI_prototype.pro \
+		../../resources.qrc \
 		../../../../Qt/6.9.1/gcc_64/lib/libQt6Widgets.prl \
 		../../../../Qt/6.9.1/gcc_64/lib/libQt6Gui.prl \
 		../../../../Qt/6.9.1/gcc_64/lib/libQt6Core.prl
@@ -762,6 +767,7 @@ Makefile: ../../GUI_prototype.pro ../../../../Qt/6.9.1/gcc_64/mkspecs/features/s
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/6.9.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -784,6 +790,7 @@ Makefile: ../../GUI_prototype.pro ../../../../Qt/6.9.1/gcc_64/mkspecs/features/s
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/yacc.prf:
 ../../../../Qt/6.9.1/gcc_64/mkspecs/features/lex.prf:
 ../../GUI_prototype.pro:
+../../resources.qrc:
 ../../../../Qt/6.9.1/gcc_64/lib/libQt6Widgets.prl:
 ../../../../Qt/6.9.1/gcc_64/lib/libQt6Gui.prl:
 ../../../../Qt/6.9.1/gcc_64/lib/libQt6Core.prl:
@@ -801,6 +808,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../../resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/6.9.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../dialog.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../../main.cpp ../../dialog.cpp $(DISTDIR)/
@@ -828,8 +836,18 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: ../../resources.qrc \
+		../../../../Qt/6.9.1/gcc_64/libexec/rcc \
+		../../images/cat_3.jpeg \
+		../../images/cat_2.png \
+		../../images/dog_1.png \
+		../../images/space_1.png \
+		../../images/dog_3.jpeg
+	/home/nabeel_okal/Qt/6.9.1/gcc_64/libexec/rcc -name resources ../../resources.qrc -o qrc_resources.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -1037,6 +1055,17 @@ moc_dialog.cpp: ../../dialog.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/QIcon \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QFile \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/qfile.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QTextStream \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
 		moc_predefs.h \
 		../../../../Qt/6.9.1/gcc_64/libexec/moc
 	/home/nabeel_okal/Qt/6.9.1/gcc_64/libexec/moc $(DEFINES) --include /home/nabeel_okal/Qt_Projects/GUI_prototype/build/Desktop_Qt_6_9_1-Debug/moc_predefs.h -I/home/nabeel_okal/Qt/6.9.1/gcc_64/mkspecs/linux-g++ -I/home/nabeel_okal/Qt_Projects/GUI_prototype -I/home/nabeel_okal/Qt/6.9.1/gcc_64/include -I/home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets -I/home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui -I/home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../dialog.h -o moc_dialog.cpp
@@ -1058,7 +1087,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -1260,6 +1289,17 @@ main.o: ../../main.cpp ../../dialog.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/QIcon \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QFile \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/qfile.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QTextStream \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
@@ -1462,8 +1502,46 @@ dialog.o: ../../dialog.cpp ../../dialog.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.9.1/gcc_64/include/QtGui/qguiapplication_platform.h \
-		ui_dialog.h
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/QIcon \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QFile \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/qfile.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QTextStream \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QMessageBox \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		ui_dialog.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtCore/QVariant \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QApplication \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qapplication.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QPlainTextEdit \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qplaintextedit.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qtextedit.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qtextdocument.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qtextcursor.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qtextformat.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qtextlayout.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qglyphrun.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qrawfont.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtGui/qfontdatabase.h \
+		../../../../Qt/6.9.1/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o ../../dialog.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_dialog.o: moc_dialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dialog.o moc_dialog.cpp

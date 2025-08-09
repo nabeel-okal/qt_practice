@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/files">
+        <file>images/dog_1.png</file>
+        <file>images/cat_3.jpeg</file>
+        <file>images/cat_2.png</file>
+    </qresource>
+    <qresource prefix="/dialog">
+        <file>images/dog_3.jpeg</file>
+        <file>images/space_1.png</file>
+    </qresource>
+</RCC>

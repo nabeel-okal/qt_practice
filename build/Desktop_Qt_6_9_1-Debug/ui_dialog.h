@@ -13,12 +13,11 @@
 #include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDateEdit>
-#include <QtWidgets/QDateTimeEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QTimeEdit>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -29,18 +28,18 @@ public:
     QVBoxLayout *verticalLayout;
     QGridLayout *gridLayout;
     QLabel *label;
-    QTimeEdit *timeEdit;
+    QLineEdit *txtName;
     QLabel *label_2;
-    QDateEdit *dateEdit;
+    QLineEdit *txtTitle;
     QLabel *label_3;
-    QDateTimeEdit *dateTimeEdit;
+    QDateEdit *HireD;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName("Dialog");
-        Dialog->resize(283, 196);
+        Dialog->resize(444, 212);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -135,37 +134,37 @@ public:
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
-        timeEdit = new QTimeEdit(Dialog);
-        timeEdit->setObjectName("timeEdit");
+        txtName = new QLineEdit(Dialog);
+        txtName->setObjectName("txtName");
 
-        gridLayout->addWidget(timeEdit, 0, 1, 1, 1);
+        gridLayout->addWidget(txtName, 0, 1, 1, 1);
 
         label_2 = new QLabel(Dialog);
         label_2->setObjectName("label_2");
 
         gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
-        dateEdit = new QDateEdit(Dialog);
-        dateEdit->setObjectName("dateEdit");
+        txtTitle = new QLineEdit(Dialog);
+        txtTitle->setObjectName("txtTitle");
 
-        gridLayout->addWidget(dateEdit, 1, 1, 1, 1);
+        gridLayout->addWidget(txtTitle, 1, 1, 1, 1);
 
         label_3 = new QLabel(Dialog);
         label_3->setObjectName("label_3");
 
         gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
-        dateTimeEdit = new QDateTimeEdit(Dialog);
-        dateTimeEdit->setObjectName("dateTimeEdit");
+        HireD = new QDateEdit(Dialog);
+        HireD->setObjectName("HireD");
 
-        gridLayout->addWidget(dateTimeEdit, 2, 1, 1, 1);
+        gridLayout->addWidget(HireD, 2, 1, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout);
 
         buttonBox = new QDialogButtonBox(Dialog);
         buttonBox->setObjectName("buttonBox");
-        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
+        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Ok);
 
         verticalLayout->addWidget(buttonBox);
 
@@ -178,9 +177,9 @@ public:
     void retranslateUi(QDialog *Dialog)
     {
         Dialog->setWindowTitle(QCoreApplication::translate("Dialog", "Example", nullptr));
-        label->setText(QCoreApplication::translate("Dialog", "Time", nullptr));
-        label_2->setText(QCoreApplication::translate("Dialog", "Date", nullptr));
-        label_3->setText(QCoreApplication::translate("Dialog", "Both", nullptr));
+        label->setText(QCoreApplication::translate("Dialog", "Name", nullptr));
+        label_2->setText(QCoreApplication::translate("Dialog", "Title", nullptr));
+        label_3->setText(QCoreApplication::translate("Dialog", "Hire", nullptr));
     } // retranslateUi
 
 };
