@@ -10,13 +10,16 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    dialog.cpp
+    dialog.cpp \
+    selections.cpp
 
 HEADERS += \
-    dialog.h
+    dialog.h \
+    selections.h
 
 FORMS += \
-    dialog.ui
+    dialog.ui \
+    selections.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

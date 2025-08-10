@@ -1,45 +1,36 @@
 /********************************************************************************
-** Form generated from reading UI file 'dialog.ui'
+** Form generated from reading UI file 'selections.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.9.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_DIALOG_H
-#define UI_DIALOG_H
+#ifndef UI_SELECTIONS_H
+#define UI_SELECTIONS_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLineEdit>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Dialog
+class Ui_Selections
 {
 public:
     QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QLineEdit *lineEdit;
-    QPushButton *selectBtn;
+    QListWidget *selectionsList;
     QDialogButtonBox *buttonBox;
 
-    void setupUi(QDialog *Dialog)
+    void setupUi(QDialog *Selections)
     {
-        if (Dialog->objectName().isEmpty())
-            Dialog->setObjectName("Dialog");
-        Dialog->resize(338, 153);
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(Dialog->sizePolicy().hasHeightForWidth());
-        Dialog->setSizePolicy(sizePolicy);
+        if (Selections->objectName().isEmpty())
+            Selections->setObjectName("Selections");
+        Selections->resize(400, 300);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -118,49 +109,37 @@ public:
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
         palette.setBrush(QPalette::ColorGroup::Disabled, QPalette::ColorRole::Accent, brush1);
 #endif
-        Dialog->setPalette(palette);
-        Dialog->setStyleSheet(QString::fromUtf8(""));
-        verticalLayout = new QVBoxLayout(Dialog);
+        Selections->setPalette(palette);
+        verticalLayout = new QVBoxLayout(Selections);
         verticalLayout->setObjectName("verticalLayout");
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
-        lineEdit = new QLineEdit(Dialog);
-        lineEdit->setObjectName("lineEdit");
+        selectionsList = new QListWidget(Selections);
+        selectionsList->setObjectName("selectionsList");
 
-        horizontalLayout->addWidget(lineEdit);
+        verticalLayout->addWidget(selectionsList);
 
-        selectBtn = new QPushButton(Dialog);
-        selectBtn->setObjectName("selectBtn");
-
-        horizontalLayout->addWidget(selectBtn);
-
-
-        verticalLayout->addLayout(horizontalLayout);
-
-        buttonBox = new QDialogButtonBox(Dialog);
+        buttonBox = new QDialogButtonBox(Selections);
         buttonBox->setObjectName("buttonBox");
         buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
 
         verticalLayout->addWidget(buttonBox);
 
 
-        retranslateUi(Dialog);
+        retranslateUi(Selections);
 
-        QMetaObject::connectSlotsByName(Dialog);
+        QMetaObject::connectSlotsByName(Selections);
     } // setupUi
 
-    void retranslateUi(QDialog *Dialog)
+    void retranslateUi(QDialog *Selections)
     {
-        Dialog->setWindowTitle(QCoreApplication::translate("Dialog", "Example", nullptr));
-        selectBtn->setText(QCoreApplication::translate("Dialog", "Select", nullptr));
+        Selections->setWindowTitle(QCoreApplication::translate("Selections", "Dialog", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Dialog: public Ui_Dialog {};
+    class Selections: public Ui_Selections {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_DIALOG_H
+#endif // UI_SELECTIONS_H

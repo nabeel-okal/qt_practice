@@ -1,12 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'dialog.h'
+** Meta object code from reading C++ file 'selections.h'
 **
 ** Created by: The Qt Meta Object Compiler version 69 (Qt 6.9.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../dialog.h"
+#include "../../selections.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -16,7 +16,7 @@
 
 #include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'dialog.h' doesn't include <QObject>."
+#error "The header file 'selections.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 69
 #error "This file was generated using the moc from 6.9.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -31,86 +31,82 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
-struct qt_meta_tag_ZN6DialogE_t {};
+struct qt_meta_tag_ZN10SelectionsE_t {};
 } // unnamed namespace
 
-template <> constexpr inline auto Dialog::qt_create_metaobjectdata<qt_meta_tag_ZN6DialogE_t>()
+template <> constexpr inline auto Selections::qt_create_metaobjectdata<qt_meta_tag_ZN10SelectionsE_t>()
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "Dialog",
-        "on_selectBtn_clicked",
-        "",
+        "Selections",
         "on_buttonBox_accepted",
+        "",
         "on_buttonBox_rejected"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_selectBtn_clicked'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_buttonBox_accepted'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_buttonBox_rejected'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
     QtMocHelpers::UintData qt_enums {
     };
-    return QtMocHelpers::metaObjectData<Dialog, qt_meta_tag_ZN6DialogE_t>(QMC::MetaObjectFlag{}, qt_stringData,
+    return QtMocHelpers::metaObjectData<Selections, qt_meta_tag_ZN10SelectionsE_t>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums);
 }
-Q_CONSTINIT const QMetaObject Dialog::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject Selections::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN6DialogE_t>.stringdata,
-    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN6DialogE_t>.data,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN10SelectionsE_t>.stringdata,
+    qt_staticMetaObjectStaticContent<qt_meta_tag_ZN10SelectionsE_t>.data,
     qt_static_metacall,
     nullptr,
-    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN6DialogE_t>.metaTypes,
+    qt_staticMetaObjectRelocatingContent<qt_meta_tag_ZN10SelectionsE_t>.metaTypes,
     nullptr
 } };
 
-void Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Selections::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    auto *_t = static_cast<Dialog *>(_o);
+    auto *_t = static_cast<Selections *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_selectBtn_clicked(); break;
-        case 1: _t->on_buttonBox_accepted(); break;
-        case 2: _t->on_buttonBox_rejected(); break;
+        case 0: _t->on_buttonBox_accepted(); break;
+        case 1: _t->on_buttonBox_rejected(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-const QMetaObject *Dialog::metaObject() const
+const QMetaObject *Selections::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Dialog::qt_metacast(const char *_clname)
+void *Selections::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN6DialogE_t>.strings))
+    if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN10SelectionsE_t>.strings))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int Dialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Selections::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 2;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 2;
     }
     return _id;
 }

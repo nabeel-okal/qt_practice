@@ -1,5 +1,6 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include "selections.h"  // include here, not in dialog.h
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -13,15 +14,21 @@ Dialog::~Dialog()
     delete ui;
 }
 
-void Dialog::on_buttonBox_accepted() {
-    QString name = ui->txtName->text();
-    QString title = ui->txtTitle->text();
-
-    QDate selectedDate = ui->HireD->date();
-    QDateTime dateTimeWithCurrentTime(selectedDate, QTime::currentTime());
-    QString hireDate = dateTimeWithCurrentTime.toString();
-
-
-    QMessageBox::information(this, "Info", "Name: " + name + "\nTitle: " + title + "\nHire date: " + hireDate);
+void Dialog::on_selectBtn_clicked() {
+    // Pass "this" so Selections knows the main dialog
+    Selections *s = new Selections(nullptr, this);
+    s->show();
 }
 
+void Dialog::on_buttonBox_accepted() {
+    QMessageBox::information(this, "Info!", "You have selected: " + ui->lineEdit->text());
+    accept();
+}
+
+void Dialog::on_buttonBox_rejected() {
+    reject();
+}
+
+void Dialog::setText(const QString &text) {  // use const QString& for efficiency
+    ui->lineEdit->setText(text);
+}

@@ -2,10 +2,9 @@
 #define DIALOG_H
 
 #include <QDialog>
-#include <QIcon>
-#include <QFile>
-#include <QTextStream>
 #include <QMessageBox>
+
+class Selections; // forward declaration
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,8 +20,12 @@ public:
     Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+    void setText(const QString &text);
+
 private slots:
+    void on_selectBtn_clicked();
     void on_buttonBox_accepted();
+    void on_buttonBox_rejected();
 
 private:
     Ui::Dialog *ui;
