@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-8677746d1cc3ca21ada7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MainWindow_prototype",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "MainWindow_prototype::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MainWindow_prototype-Debug-53b0361639183e6c804b.json",
+					"name" : "MainWindow_prototype",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MainWindow_prototype_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MainWindow_prototype_autogen-Debug-077c2cdaa14fc2d924c0.json",
+					"name" : "MainWindow_prototype_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MainWindow_prototype_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MainWindow_prototype_autogen_timestamp_deps-Debug-03660cb7d8abd6df4da3.json",
+					"name" : "MainWindow_prototype_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug",
+		"source" : "/home/nabeel_okal/Qt_Projects/MainWindow_prototype"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

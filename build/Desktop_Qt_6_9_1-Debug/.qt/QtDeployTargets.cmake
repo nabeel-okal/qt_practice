@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_MainWindow_prototype_FILE /home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype)
+set(__QT_DEPLOY_TARGET_MainWindow_prototype_TYPE EXECUTABLE)
