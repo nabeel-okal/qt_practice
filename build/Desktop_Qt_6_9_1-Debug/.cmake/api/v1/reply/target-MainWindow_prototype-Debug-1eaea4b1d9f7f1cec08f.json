@@ -47,7 +47,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 8,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
@@ -71,13 +71,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 24,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 16,
+				"line" : 20,
 				"parent" : 0
 			},
 			{
@@ -289,7 +289,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				5
 			]
 		}
 	],
@@ -381,7 +382,8 @@
 			[
 				0,
 				5,
-				6
+				6,
+				7
 			]
 		},
 		{
@@ -407,10 +409,17 @@
 			]
 		},
 		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				8
+			]
+		},
+		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				7
+				9
 			]
 		}
 	],
@@ -446,6 +455,13 @@
 			"sourceGroupIndex" : 3
 		},
 		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1-Debug/qrc_resources.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/include/ui_mainwindow.h",
@@ -459,9 +475,14 @@
 		},
 		{
 			"backtrace" : 0,
+			"path" : "resources.qrc",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/timestamp.rule",
-			"sourceGroupIndex" : 4
+			"sourceGroupIndex" : 5
 		}
 	],
 	"type" : "EXECUTABLE"

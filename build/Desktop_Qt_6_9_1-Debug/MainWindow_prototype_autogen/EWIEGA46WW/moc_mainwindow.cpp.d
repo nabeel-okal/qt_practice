@@ -1,5 +1,6 @@
 /home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/nabeel_okal/Qt_Projects/MainWindow_prototype/mainwindow.h \
   /home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/moc_predefs.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QDebug \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QFile \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QTextStream \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/q17memory.h \
@@ -152,26 +153,33 @@
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qkeysequence.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qpaintdevice.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qpalette.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qpicture.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qpixelformat.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qpixmap.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qpolygon.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qregion.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qrgb.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qrgba64.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtextdocument.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtgui-config.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtguiexports.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtguiglobal.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtransform.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qwindowdefs.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QFileDialog \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QLabel \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QMainWindow \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QMessageBox \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QStatusBar \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qdialog.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qfiledialog.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qframe.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qlabel.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qmainwindow.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qmessagebox.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qstatusbar.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \

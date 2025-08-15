@@ -5,13 +5,16 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
 
 qt_standard_project_setup()
 
+qt_add_resources(MyQtApp_RESOURCES resources.qrc)
+
 qt_add_executable(MainWindow_prototype
     WIN32 MACOSX_BUNDLE
     main.cpp
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
-    resources.qrc
+    # resources.qrc
+    ${MyQtApp_RESOURCES}
 )
 
 target_link_libraries(MainWindow_prototype

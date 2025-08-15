@@ -6,6 +6,9 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QLabel>
+#include <QStatusBar>
+#include <QDebug>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,21 +32,21 @@ private slots:
     void selectNone();
 
     void on_actionToolbar_Top_triggered();
-
     void on_actionToolbar_Bottom_triggered();
-
     void on_actionToolbar_Left_triggered();
-
     void on_actionToolbar_Right_triggered();
-
     void on_actionToolbar_Floatable_toggled(bool arg1);
-
     void on_actionToolbar_Movable_toggled(bool arg1);
+
+    void on_plainTextEdit_textChanged();
 
 private:
     Ui::MainWindow *ui;
 
     QString m_filename;
     bool m_saved;
+
+    void setupStatusBar();
+    void updateStatus(QString msg);
 };
 #endif // MAINWINDOW_H

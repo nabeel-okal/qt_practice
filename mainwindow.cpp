@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setCentralWidget(ui->plainTextEdit);
 
+    setupStatusBar();
+
     newFile();
     m_saved = true;
 }
@@ -33,7 +35,8 @@ void MainWindow::newFile() {
     ui->plainTextEdit->clear();
     m_filename.clear();
     m_saved = false;
-    ui->statusbar->showMessage("New File");
+    // ui->statusbar->showMessage("New File");
+    updateStatus("New File");
 }
 
 void MainWindow::openFile() {
@@ -55,7 +58,8 @@ void MainWindow::openFile() {
     file.close();
 
     m_saved = true;
-    ui->statusbar->showMessage(m_filename);
+    // ui->statusbar->showMessage(m_filename);
+    updateStatus("New File");
 }
 
 void MainWindow::saveFile() {
@@ -75,7 +79,7 @@ void MainWindow::saveFile() {
     file.close();
 
     m_saved = true;
-    ui->statusbar->showMessage(m_filename);
+    // ui->statusbar->showMessage(m_filename);
 }
 
 void MainWindow::saveFileAs() {
@@ -122,5 +126,50 @@ void MainWindow::on_actionToolbar_Floatable_toggled(bool arg1) {
 
 void MainWindow::on_actionToolbar_Movable_toggled(bool arg1) {
     ui->toolBar->setMovable(arg1);
+}
+
+void MainWindow::setupStatusBar() {
+    QLabel *lblIcon = new QLabel(this);
+    lblIcon->setPixmap(QPixmap(":/files/images/new.png"));
+    ui->statusbar->addWidget(lblIcon);
+
+    QLabel *lblStatus = new QLabel(this);
+    lblStatus->setText("Not Saved:");
+    ui->statusbar->addWidget(lblStatus);
+
+    QLabel *lblFile = new QLabel(this);
+    lblFile->setText("New");
+    ui->statusbar->addWidget(lblFile);
+}
+
+void MainWindow::updateStatus(QString msg) {
+
+    foreach(QObject* obj, ui->statusbar->children()) {
+        qDebug() << obj;
+    }
+
+    QLabel *lblIcon = qobject_cast<QLabel*>(ui->statusbar->children().at(1));
+    QLabel *lblStatus = qobject_cast<QLabel*>(ui->statusbar->children().at(2));
+    QLabel *lblFile = qobject_cast<QLabel*>(ui->statusbar->children().at(4));
+
+    if(m_saved){
+        lblIcon->setPixmap(QPixmap(":/files/images/save.png"));
+        lblStatus->setText("Saved:");
+    } else{
+        lblIcon->setPixmap(QPixmap(":/files/images/new.png"));
+        lblStatus->setText("Not Saved:");
+    }
+
+    lblFile->setText(m_filename);
+
+}
+
+void MainWindow::on_plainTextEdit_textChanged() {
+    m_saved = false;
+    if(m_filename.isEmpty()){
+        updateStatus("New File");
+    } else{
+        updateStatus(m_filename);
+    }
 }
 

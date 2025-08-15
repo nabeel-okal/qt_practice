@@ -448,6 +448,7 @@
 		"/home/nabeel_okal/Qt/Tools/CMake/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
 		"/home/nabeel_okal/Qt/6.9.1/gcc_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
 		"/home/nabeel_okal/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake",
+		"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/resources.qrc",
 		"/home/nabeel_okal/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/nabeel_okal/Qt_Projects/MainWindow_prototype",
@@ -510,7 +511,10 @@
 	],
 	"MOC_PREDEFS_FILE" : "/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : [],
+	"MOC_SKIP" : 
+	[
+		"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/qrc_resources.cpp"
+	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
 	"PARSE_CACHE_FILE" : "/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/CMakeFiles/MainWindow_prototype_autogen.dir/ParseCache.txt",
@@ -534,7 +538,10 @@
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
-	"UIC_SKIP" : [],
+	"UIC_SKIP" : 
+	[
+		"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/qrc_resources.cpp"
+	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0
