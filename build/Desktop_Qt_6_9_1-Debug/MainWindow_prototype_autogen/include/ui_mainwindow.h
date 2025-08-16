@@ -12,10 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -45,6 +47,8 @@ public:
     QAction *actionToolbar_Floatable;
     QAction *actionToolbar_Movable;
     QWidget *centralwidget;
+    QSplitter *splitter;
+    QListWidget *listWidget;
     QPlainTextEdit *plainTextEdit;
     QStatusBar *statusbar;
     QMenuBar *menubar;
@@ -59,6 +63,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(800, 600);
+        MainWindow->setSizeIncrement(QSize(0, 0));
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -202,9 +207,18 @@ public:
         actionToolbar_Movable->setCheckable(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        plainTextEdit = new QPlainTextEdit(centralwidget);
+        splitter = new QSplitter(centralwidget);
+        splitter->setObjectName("splitter");
+        splitter->setGeometry(QRect(40, 80, 512, 192));
+        splitter->setOrientation(Qt::Orientation::Horizontal);
+        listWidget = new QListWidget(splitter);
+        listWidget->setObjectName("listWidget");
+        listWidget->setMaximumSize(QSize(200, 16777215));
+        listWidget->setSizeIncrement(QSize(0, 0));
+        splitter->addWidget(listWidget);
+        plainTextEdit = new QPlainTextEdit(splitter);
         plainTextEdit->setObjectName("plainTextEdit");
-        plainTextEdit->setGeometry(QRect(40, 80, 361, 181));
+        splitter->addWidget(plainTextEdit);
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

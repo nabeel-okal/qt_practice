@@ -2,6 +2,9 @@
   /home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/moc_predefs.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QDebug \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QFile \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QScopedPointer \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QString \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QStringList \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/QTextStream \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/q17memory.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/q20functional.h \
@@ -10,6 +13,7 @@
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/q20type_traits.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/q20utility.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/q23utility.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qabstractitemmodel.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qalgorithms.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qanystringview.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qarraydata.h \
@@ -59,6 +63,7 @@
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qhashfunctions.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qiodevice.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qiodevicebase.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qitemselectionmodel.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qiterable.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qiterator.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qlatin1stringview.h \
@@ -85,6 +90,7 @@
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qprocessordetection.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qrect.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qrefcount.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qregularexpression.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qscopedpointer.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qscopeguard.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore/qset.h \
@@ -165,26 +171,42 @@
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtguiexports.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtguiglobal.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qtransform.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qvalidator.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QDialog \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QFileDialog \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QLabel \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QMainWindow \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QMessageBox \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/QStatusBar \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractitemview.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractslider.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qabstractspinbox.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qdialog.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qfiledialog.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qframe.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qlabel.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qlistview.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qlistwidget.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qmainwindow.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qmessagebox.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qrubberband.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qslider.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qstatusbar.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qstyle.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qstyleoption.h \
+  /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtabbar.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtabwidget.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
   /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets/qwidget.h \
+  /home/nabeel_okal/Qt_Projects/MainWindow_prototype/dialog.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \

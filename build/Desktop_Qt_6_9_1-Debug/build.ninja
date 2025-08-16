@@ -81,6 +81,14 @@ build CMakeFiles/MainWindow_prototype.dir/qrc_resources.cpp.o: CXX_COMPILER__Mai
   OBJECT_DIR = CMakeFiles/MainWindow_prototype.dir
   OBJECT_FILE_DIR = CMakeFiles/MainWindow_prototype.dir
 
+build CMakeFiles/MainWindow_prototype.dir/dialog.cpp.o: CXX_COMPILER__MainWindow_prototype_unscanned_Debug /home/nabeel_okal/Qt_Projects/MainWindow_prototype/dialog.cpp || cmake_object_order_depends_target_MainWindow_prototype
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/MainWindow_prototype.dir/dialog.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/MainWindow_prototype_autogen/include -isystem /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtCore -isystem /home/nabeel_okal/Qt/6.9.1/gcc_64/include -isystem /home/nabeel_okal/Qt/6.9.1/gcc_64/mkspecs/linux-g++ -isystem /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtWidgets -isystem /home/nabeel_okal/Qt/6.9.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/MainWindow_prototype.dir
+  OBJECT_FILE_DIR = CMakeFiles/MainWindow_prototype.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MainWindow_prototype
@@ -89,7 +97,7 @@ build CMakeFiles/MainWindow_prototype.dir/qrc_resources.cpp.o: CXX_COMPILER__Mai
 #############################################
 # Link the executable MainWindow_prototype
 
-build MainWindow_prototype: CXX_EXECUTABLE_LINKER__MainWindow_prototype_Debug CMakeFiles/MainWindow_prototype.dir/MainWindow_prototype_autogen/mocs_compilation.cpp.o CMakeFiles/MainWindow_prototype.dir/main.cpp.o CMakeFiles/MainWindow_prototype.dir/mainwindow.cpp.o CMakeFiles/MainWindow_prototype.dir/qrc_resources.cpp.o | /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1 /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Gui.so.6.9.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1 || MainWindow_prototype_autogen MainWindow_prototype_autogen_timestamp_deps
+build MainWindow_prototype: CXX_EXECUTABLE_LINKER__MainWindow_prototype_Debug CMakeFiles/MainWindow_prototype.dir/MainWindow_prototype_autogen/mocs_compilation.cpp.o CMakeFiles/MainWindow_prototype.dir/main.cpp.o CMakeFiles/MainWindow_prototype.dir/mainwindow.cpp.o CMakeFiles/MainWindow_prototype.dir/qrc_resources.cpp.o CMakeFiles/MainWindow_prototype.dir/dialog.cpp.o | /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1 /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Gui.so.6.9.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1 || MainWindow_prototype_autogen MainWindow_prototype_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/nabeel_okal/Qt/6.9.1/gcc_64/lib:  /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1  /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Gui.so.6.9.1  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /home/nabeel_okal/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1  -Wl,-rpath-link,/home/nabeel_okal/Qt/6.9.1/gcc_64/lib
   OBJECT_DIR = CMakeFiles/MainWindow_prototype.dir
@@ -174,7 +182,7 @@ build MainWindow_prototype_autogen_timestamp_deps: phony
 #############################################
 # Utility command for MainWindow_prototype_autogen
 
-build MainWindow_prototype_autogen: phony CMakeFiles/MainWindow_prototype_autogen MainWindow_prototype_autogen/include/ui_mainwindow.h MainWindow_prototype_autogen/timestamp MainWindow_prototype_autogen/mocs_compilation.cpp MainWindow_prototype_autogen_timestamp_deps
+build MainWindow_prototype_autogen: phony CMakeFiles/MainWindow_prototype_autogen MainWindow_prototype_autogen/include/ui_mainwindow.h MainWindow_prototype_autogen/include/ui_dialog.h MainWindow_prototype_autogen/timestamp MainWindow_prototype_autogen/mocs_compilation.cpp MainWindow_prototype_autogen_timestamp_deps
 
 
 #############################################
@@ -200,7 +208,7 @@ build MainWindow_prototype_autogen/timestamp MainWindow_prototype_autogen/mocs_c
 #############################################
 # Phony custom command for CMakeFiles/MainWindow_prototype_autogen
 
-build CMakeFiles/MainWindow_prototype_autogen MainWindow_prototype_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/MainWindow_prototype_autogen ${cmake_ninja_workdir}MainWindow_prototype_autogen/include/ui_mainwindow.h: phony MainWindow_prototype_autogen/timestamp || MainWindow_prototype_autogen_timestamp_deps
+build CMakeFiles/MainWindow_prototype_autogen MainWindow_prototype_autogen/include/ui_mainwindow.h MainWindow_prototype_autogen/include/ui_dialog.h | ${cmake_ninja_workdir}CMakeFiles/MainWindow_prototype_autogen ${cmake_ninja_workdir}MainWindow_prototype_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}MainWindow_prototype_autogen/include/ui_dialog.h: phony MainWindow_prototype_autogen/timestamp || MainWindow_prototype_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

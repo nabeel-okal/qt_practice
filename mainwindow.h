@@ -9,6 +9,9 @@
 #include <QLabel>
 #include <QStatusBar>
 #include <QDebug>
+#include <QListWidgetItem>
+#include <QScopedPointer>
+#include "dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -39,6 +42,14 @@ private slots:
     void on_actionToolbar_Movable_toggled(bool arg1);
 
     void on_plainTextEdit_textChanged();
+
+    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_actionAnimals_triggered();
+
+    void on_actionShapes_triggered();
+
+    void on_actionFood_triggered();
 
 private:
     Ui::MainWindow *ui;

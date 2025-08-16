@@ -15,6 +15,7 @@ qt_add_executable(MainWindow_prototype
     mainwindow.ui
     # resources.qrc
     ${MyQtApp_RESOURCES}
+    dialog.h dialog.cpp dialog.ui
 )
 
 target_link_libraries(MainWindow_prototype

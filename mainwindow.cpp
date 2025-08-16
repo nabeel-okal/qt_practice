@@ -18,12 +18,17 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionSelect_All, &QAction::triggered, ui->plainTextEdit, &QPlainTextEdit::selectAll);
     connect(ui->actionSelect_None, &QAction::triggered, this, &MainWindow::selectNone);
 
-    this->setCentralWidget(ui->plainTextEdit);
+    this->setCentralWidget(ui->splitter);
 
     setupStatusBar();
 
     newFile();
     m_saved = true;
+
+    for(int i = 0; i < 100; i++){
+        QString strVal = "Item number: " + QString::number(i);
+        ui->listWidget->addItem(strVal);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -171,5 +176,52 @@ void MainWindow::on_plainTextEdit_textChanged() {
     } else{
         updateStatus(m_filename);
     }
+}
+
+
+void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item) {
+    ui->plainTextEdit->appendPlainText(item->text());
+}
+
+
+void MainWindow::on_actionAnimals_triggered() {
+    QStringList options;
+    options << "Dogs" << "Cats" << "Chickens" << "Horses";
+
+    QScopedPointer<Dialog> dlg(new Dialog());
+    dlg.data()->setList(options);
+    dlg.data()->exec();
+
+    ui->plainTextEdit->insertPlainText("You chose: " + dlg.data()->selected() + "\n");
+}
+
+
+void MainWindow::on_actionShapes_triggered() {
+    QStringList options;
+    options << "Circle" << "Triangle" << "Rectangle" << "Square";
+
+    QScopedPointer<Dialog> dlg(new Dialog());
+    dlg.data()->setList(options);
+    dlg.data()->exec();
+
+    ui->plainTextEdit->insertPlainText("You chose: " + dlg.data()->selected() + "\n");
+}
+
+
+void MainWindow::on_actionFood_triggered() {
+    QStringList options;
+    options << "Pizza" << "Icecream" << "Burger" << "Chicken";
+
+    QScopedPointer<Dialog> dlg(new Dialog());
+    dlg.data()->setList(options);
+    dlg.data()->exec();
+
+    ui->plainTextEdit->insertPlainText("You chose: " + dlg.data()->selected() + "\n");
+}
+
+
+void MainWindow::on_actionZoom_In_triggered()
+{
+
 }
 

@@ -458,6 +458,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/dialog.h",
+			"MU",
+			"EWIEGA46WW/moc_dialog.cpp",
+			null
+		],
+		[
 			"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -525,6 +531,11 @@
 	"SETTINGS_FILE" : "/home/nabeel_okal/Qt_Projects/MainWindow_prototype/build/Desktop_Qt_6_9_1-Debug/CMakeFiles/MainWindow_prototype_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/dialog.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/nabeel_okal/Qt_Projects/MainWindow_prototype/main.cpp",
 			"MU",

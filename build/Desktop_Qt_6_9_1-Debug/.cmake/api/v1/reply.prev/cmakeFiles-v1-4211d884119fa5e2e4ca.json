@@ -1869,6 +1869,9 @@
 			"path" : "/home/nabeel_okal/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
 		},
 		{
+			"path" : "resources.qrc"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/home/nabeel_okal/Qt/Tools/CMake/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
